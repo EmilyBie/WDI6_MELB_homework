@@ -1,0 +1,74 @@
+body {
+  background-color: #D3D3D3;
+}
+header {
+  text-align: center;
+  background-image: url("../images/background.jpg");
+  height: 160px;
+}
+.logo {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 20%;
+}
+.content {
+  display: inline-block;
+  margin:100px 80px 30px 80px;
+}
+span {
+  color: red;
+}
+.dottedLine {
+  border-top: dotted 1px;
+}
+.solidLine {
+  border-top: solid 1px;
+}
+.ecard {
+  background-size: cover;
+  max-width: 100%;
+}
+.articles {
+  display: inline-block;;
+  max-width: 55%;
+  background-color: white;
+  padding:30px 15px;
+  vertical-align: top;
+}
+.right {
+  display: inline-block;
+  max-width: 20%;
+  background-color: white;
+  padding:10px 15px;
+  vertical-align: top;
+  margin-left:10px;
+  text-align: left;
+}
+ul {
+  padding-left: 0px;
+}
+li {
+  list-style-type: none;
+  line-height: 25px;
+  text-align: left;
+  font-size: 14px;
+  color:black;
+}
+.ads img{
+  max-width: 100%;
+}
+h2 {
+  font-size: 15px;
+  color: black;
+}
+a {
+  text-decoration: none;
+  color: red;
+}
+.icons {
+  text-align: center;
+}
+.icons img {
+
+}
+
