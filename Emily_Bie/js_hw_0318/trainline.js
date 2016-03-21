@@ -7,7 +7,7 @@ var trainLines = [['Flinders Street','Richmond','East Richmond','Burnley','Hawth
 var displayJourney = function(journeyArr) {
     var journey = journeyArr.join('---->');
     var stops = journeyArr.length -1;
-    debugger
+    //debugger
     console.log(journey);
     console.log(stops+ " stops total");
 }
@@ -23,7 +23,7 @@ var findStops = function(stop) {
               break;
             }
         }
-        if(stopIndex.line) {
+        if(stopIndex.line !== undefined) {
             break;
         }
     }
@@ -36,6 +36,7 @@ var journeyPlanner = function(origin, destination) {
     console.log('Origin:' + origin +', destination: ' + destination);
     var startIndex = {};
     var destIndex = {};
+    debugger
     if(origin !== 'Richmond' && destination !== 'Richmond') {
         startIndex = findStops(origin);
         destIndex = findStops(destination);
@@ -50,12 +51,9 @@ var journeyPlanner = function(origin, destination) {
     }
 
     if(startIndex.line === destIndex.line) {
-        //var lineNum = startIndex.line;
         var start = Math.min(startIndex.stop, destIndex.stop);
         var dest = Math.max(startIndex.stop, destIndex.stop) + 1;
-        //var total = dest - start + 1;
         var journeyArr = trainLines[startIndex.line].slice(start,dest);
-        //if journeyArr[0] !== origin reverse()
         if(journeyArr[0] !== origin) {
             journeyArr.reverse();
         }
@@ -71,7 +69,6 @@ var journeyPlanner = function(origin, destination) {
 
         var start = Math.min(richmondIndexOrg.stop, startIndex.stop);
         var dest = Math.max(richmondIndexOrg.stop, startIndex.stop) + 1;
-        //var total = dest - start + 1;
         var firstJourney = trainLines[startIndex.line].slice(start, dest);
         if(firstJourney[0] !== origin) {
             firstJourney.reverse();
@@ -91,7 +88,6 @@ var journeyPlanner = function(origin, destination) {
         var secondJourney;
         start = Math.min(richmondIndex.stop, destIndex.stop);
         dest = Math.max(richmondIndex.stop, destIndex.stop) + 1;
-        //total = dest - start + 1;
         secondJourney = trainLines[destIndex.line].slice(start,dest);
         var lastItemIndex = secondJourney.length - 1;
         if(secondJourney[lastItemIndex] !== destination) {
